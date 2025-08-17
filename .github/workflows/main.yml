@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-apk:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04   # <-- pin σε 22.04
 
     steps:
       - name: Checkout
@@ -21,7 +21,9 @@ jobs:
       - name: Install system deps
         run: |
           sudo apt-get update -y
-          sudo apt-get install -y                 build-essential git zip unzip curl openjdk-17-jdk                 automake autoconf libtool pkg-config python3.10-dev
+          sudo apt-get install -y \
+            build-essential git zip unzip curl openjdk-17-jdk \
+            automake autoconf libtool pkg-config
 
       - name: Install pip & tools
         run: |
