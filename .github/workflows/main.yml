@@ -36,8 +36,9 @@ jobs:
           ANDROIDAPI: "31"
           ANDROIDMINAPI: "21"
         run: |
-          yes | buildozer -v android debug apk
+          yes | buildozer -v android debug   # <-- χωρίς το 'apk'
           ls -lah bin || true
+
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
